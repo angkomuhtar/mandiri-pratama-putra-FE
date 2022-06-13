@@ -23,7 +23,12 @@ module.exports = {
         "2xl": "1496px",
       },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ["Nunito Sans"],
+        poppins: ["Poppins"],
+      },
+    },
   },
   plugins: [],
 };

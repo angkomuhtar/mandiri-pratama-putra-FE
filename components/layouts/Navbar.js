@@ -16,8 +16,11 @@ function Navbar({ offsetY }) {
         <div className=''>
           <Image src={appLogo} width={75} height={35} alt='' />
         </div>
-        <nav className='' onClick={() => setMenuOpen(!menuOpen)}>
-          <a href='#' className='text-white md:hidden'>
+        <nav className=''>
+          <a
+            href='#'
+            className='text-white md:hidden'
+            onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <IoClose size={33} /> : <IoMenu size={33} />}
           </a>
           <ul
