@@ -1,11 +1,7 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import Hero from "../components/layouts/Hero";
 import Navbar from "../components/layouts/Navbar";
-import appLogo from "../public/mppLogo.png";
-import { IoClose, IoMenu } from "react-icons/io5";
-import NavList from "../components/elements/navList";
 
 export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
