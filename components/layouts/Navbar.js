@@ -14,7 +14,7 @@ function Navbar({ offsetY }) {
       } py-3 z-10 fixed w-full`}>
       <div className='container flex justify-between items-center'>
         <div className=''>
-          <Image src={appLogo} width={75} height={35} />
+          <Image src={appLogo} width={75} height={35} alt='' />
         </div>
         <nav className='' onClick={() => setMenuOpen(!menuOpen)}>
           <a href='#' className='text-white md:hidden'>
