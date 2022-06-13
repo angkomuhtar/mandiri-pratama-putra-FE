@@ -1,6 +1,6 @@
 import React from "react";
 
-const NavList = ({ text }) => {
+const NavMenu = ({ text }) => {
   return (
     <li className='flex flex-col justify-between items-start md:items-center'>
       <div className='group'>
@@ -14,4 +14,4 @@ const NavList = ({ text }) => {
   );
 };
 
-export default NavList;
+export default NavMenu;

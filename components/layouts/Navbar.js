@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import NavList from "../elements/NavList";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import appLogo from "../../public/mppLogo.png";
+import NavMenu from "../elements/NavMenu";
 
 function Navbar({ offsetY }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,9 +25,9 @@ function Navbar({ offsetY }) {
               menuOpen ? "" : "translate-x-full"
             } `}>
             <div className='container md:px-0 md:space-y-0 md:flex md:space-x-8 space-y-4'>
-              <NavList text='Home' />
-              <NavList text='About Us' />
-              <NavList text='Products' />
+              <NavMenu text='Home' />
+              <NavMenu text='About Us' />
+              <NavMenu text='Products' />
             </div>
           </ul>
         </nav>
