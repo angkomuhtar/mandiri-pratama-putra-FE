@@ -28,6 +28,7 @@ export default function Home() {
 
       <main className='relative'>
         <Navbar offsetY={scrollPosition} />
+
         <Hero />
       </main>
     </div>
