@@ -24,7 +24,7 @@ function Navbar({ offsetY }) {
             {menuOpen ? <IoClose size={33} /> : <IoMenu size={33} />}
           </a>
           <ul
-            className={`fixed left-0 right-0 min-h-screen bg-blue-300 mt-4 p-4 transform duration-300 place-items-start md:relative md:min-h-0 md:translate-x-0 md:bg-transparent ${
+            className={`fixed left-0 right-0 min-h-screen bg-blue-300 mt-4 p-4 transform duration-300 place-items-start md:mt-0 md:relative md:min-h-0 md:translate-x-0 md:bg-transparent ${
               menuOpen ? "" : "translate-x-full"
             } `}>
             <div className='container md:px-0 md:space-y-0 md:flex md:space-x-8 space-y-4'>
