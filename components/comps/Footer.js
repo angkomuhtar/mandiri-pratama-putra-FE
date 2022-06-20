@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer>
       <div className='bg-slate-900'>
-        <div className='container py-10 grid md:grid-cols-3 gap-3'>
+        <div className='container py-10 grid md:grid-cols-3 gap-5'>
           <div className='space-y-3'>
             <Image src='/mppLogo.png' width={75} height={35} alt='' />
             <p className='text-sm font-light text-left flex items-center text-white leading-snug'>
