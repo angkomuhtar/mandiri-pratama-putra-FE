@@ -23,17 +23,20 @@ const TeamCard = () => {
         <div className='flex justify-center space-x-6'>
           <a
             href='http://'
-            className='bg-orange-50 text-orange-400 p-2 rounded-full'>
+            className='bg-orange-50 text-orange-400 p-2 rounded-full relative group hover:text-black'>
+            <div className='bg-black/30 absolute w-full left-0 top-0 scale-0 z-0 bottom-0 pointer-events-none rounded-full group-hover:scale-100 transform duration-300'></div>
             <IoCallOutline size={24} />
           </a>
           <a
             href='http://'
-            className='bg-orange-50 text-orange-400 p-2 rounded-full'>
+            className='bg-orange-50 text-orange-400 p-2 rounded-full relative group hover:text-black'>
+            <div className='bg-black/30 absolute w-full left-0 top-0 scale-0 z-0 bottom-0 pointer-events-none rounded-full group-hover:scale-100 transform duration-300'></div>
             <IoMailOutline size={24} />
           </a>
           <a
             href='http://'
-            className='bg-orange-50 text-orange-400 p-2 rounded-full'>
+            className='bg-orange-50 text-orange-400 p-2 rounded-full relative group hover:text-black'>
+            <div className='bg-black/30 absolute w-full left-0 top-0 scale-0 z-0 bottom-0 pointer-events-none rounded-full group-hover:scale-100 transform duration-300'></div>
             <IoLogoFacebook size={24} />
           </a>
         </div>
