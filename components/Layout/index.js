@@ -2,12 +2,8 @@ import React, { useEffect, useState } from "react";
 import Footer from "../comps/Footer";
 import Navbar from "../comps/Navbar";
 
-const index = ({ children }) => {
+const Index = ({ children }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [winWidth, setWinWidth] = useState(0);
-  const handleWidth = () => {
-    setWinWidth(window.innerWidth);
-  };
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -15,14 +11,9 @@ const index = ({ children }) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("resize", handleWidth);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
-
-  useEffect(() => {
-    setWinWidth(window.innerWidth);
   }, []);
   return (
     <>
@@ -35,4 +26,4 @@ const index = ({ children }) => {
   );
 };
 
-export default index;
+export default Index;
