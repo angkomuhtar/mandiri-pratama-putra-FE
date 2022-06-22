@@ -56,4 +56,8 @@
   .input-label-active {
     @apply py-1 px-2 text-xs translate-x-2 -translate-y-3 bg-slate-900 text-orange-600;
   }
+
+  .input-form-active {
+    @apply py-1 px-2 text-xs translate-x-2 -translate-y-3 bg-[#f7f7f9] text-orange-600;
+  }
 }

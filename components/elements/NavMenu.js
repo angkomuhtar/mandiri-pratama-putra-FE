@@ -1,10 +1,10 @@
 import React from "react";
 
-const NavMenu = ({ text, link }) => {
+const NavMenu = ({ text, path }) => {
   return (
     <li className='flex flex-col justify-between items-start md:items-center'>
       <div className='group'>
-        <a href={link} className='font-semibold text-md text-white mb-2'>
+        <a href={path} className='font-semibold text-md text-white mb-2'>
           {text}
         </a>
         <div

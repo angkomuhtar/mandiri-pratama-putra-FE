@@ -30,9 +30,9 @@ function Navbar({ offsetY }) {
               menuOpen ? "" : "translate-x-full"
             } `}>
             <div className='container md:px-0 md:space-y-0 md:flex md:space-x-8 space-y-4'>
-              <NavMenu text='Home' link='/' />
-              <NavMenu text='About Us' link='about' />
-              <NavMenu text='Products' />
+              <NavMenu text='Home' path='/' />
+              <NavMenu text='About Us' path='/about' />
+              <NavMenu text='Products' path='/product' />
             </div>
           </ul>
         </nav>

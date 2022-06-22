@@ -17,11 +17,14 @@ import Photo from "../public/photo.jpg";
 const About = () => {
   return (
     <Layout>
-      <PageHeader />
+      <PageHeader
+        title='Tentang Kami'
+        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+      />
       <div className='min-h-screen bg-[#f7f7f9] flex flex-col justify-center '>
         <div className='container flex justify-between items-center'>
           <div className='w-3/5 flex justify-center items-center p-10'>
-            <div className='relative p-3 bg-white rounded-md w-2/3 h-auto shadow-lg shadow-slate-4  00'>
+            <div className='relative p-3 bg-white rounded-md w-2/3 h-auto shadow-lg shadow-slate-400'>
               <Image
                 src={Photo}
                 alt='photo'
