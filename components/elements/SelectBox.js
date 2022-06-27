@@ -1,10 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IoChevronDownCircle } from "react-icons/io5";
-const SelectBox = ({ items }) => {
-  const [open, setOpen] = useState(false);
+
+const SelectBox = ({ items, onClickOutside }) => {
+  const ref = useRef(null);
   const [selected, setSelected] = useState(items[0]);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick, true);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick, true);
+    };
+  }, []);
+
   return (
-    <div className='relative'>
+    <div className='relative' ref={ref}>
       <div
         className='flex justify-between items-center border border-gray-500 p-5 rounded-sm'
         onClick={() => setOpen(!open)}>

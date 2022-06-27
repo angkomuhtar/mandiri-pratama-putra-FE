@@ -14,7 +14,13 @@ const Footer = () => {
       <div className='bg-slate-900'>
         <div className='container py-10 grid md:grid-cols-3 gap-5'>
           <div className='space-y-3'>
-            <Image src='/mppLogo.png' width={75} height={35} alt='' />
+            <div className='flex items-end'>
+              <Image src='/mppLogo.png' width={75} height={35} alt='' />
+              <h2 className='font-bold text-lg text-white leading-[19px] ml-3'>
+                Mandiri <br />
+                Pratama Putra
+              </h2>
+            </div>
             <p className='text-sm font-light text-left flex items-center text-white leading-snug'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Consectetur quis recusandae voluptatibus facere placeat provident
@@ -78,7 +84,7 @@ const Footer = () => {
           <span className='text-white'>
             Create by{" "}
             <a
-              href='http://'
+              href='http://angko.herokuapp.com/'
               target='_blank'
               rel='noopener noreferrer'
               className='font-semibold text-orange-600'>

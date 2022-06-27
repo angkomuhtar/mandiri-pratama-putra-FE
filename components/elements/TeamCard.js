@@ -4,21 +4,31 @@ import { IoCallOutline, IoLogoFacebook, IoMailOutline } from "react-icons/io5";
 
 import Teams from "../../public/teams-1.jpg";
 
-const TeamCard = () => {
+const TeamCard = ({
+  nama,
+  position,
+  image,
+  width,
+  height,
+  phone,
+  email,
+  facebook,
+}) => {
   return (
     <div className='flex flex-col space-y-4 bg-white shadow-lg shadow-gray-400/20'>
       <div className='w-full'>
         <Image
-          src={Teams}
+          src={image}
           alt='photo'
-          layout='responsive'
+          height={height}
+          width={width}
           className='h-auto w-full object-cover'
         />
       </div>
       <div className='p-5 space-y-6'>
-        <h2 className='text-center font-semibold text-2xl'>Syamsul Khair</h2>
+        <h2 className='text-center font-semibold text-2xl'>{nama}</h2>
         <h2 className='text-center font-semibold text-orange-400'>
-          Chief Executive Officer
+          {position}
         </h2>
         <div className='flex justify-center space-x-6'>
           <a

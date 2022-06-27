@@ -46,8 +46,8 @@ const Index = () => {
             <IoLocationOutline size={16} className='mr-2' />
             Makassar, Tallasalapang
           </p>
-          <div className='flex space-x-4'>
-            <div className='w-2/3 space-y-8'>
+          <div className='flex flex-col md:flex-row space-x-0 md:space-x-4'>
+            <div className='w-full md:w-2/3 space-y-8'>
               <DescSection title='deskripsi'>
                 <p className='font-light leading-loose'>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -185,7 +185,7 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className='flex-1 border sticky top-20 self-start p-4'>
+            <div className='w-full flex-1 border sticky top-20 self-start p-4'>
               <h2 className='font-semibold text-lg border-l-2 border-orange-500 pl-4 capitalize'>
                 Let me Call you
               </h2>

@@ -13,8 +13,11 @@ import PageHeader from "../components/comps/PageHeader";
 import TeamCard from "../components/elements/TeamCard";
 import Layout from "../components/Layout";
 import Photo from "../public/photo.jpg";
+import ApiConfig from "../utils/ApiConfig";
 
-const About = () => {
+const About = ({ teams, abouts }) => {
+  const aboutData = abouts.data[0].attributes;
+  console.log(aboutData);
   return (
     <Layout>
       <PageHeader
@@ -22,9 +25,9 @@ const About = () => {
         desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
       />
       <div className='min-h-screen bg-[#f7f7f9] flex flex-col justify-center '>
-        <div className='container flex justify-between items-center'>
-          <div className='w-3/5 flex justify-center items-center p-10'>
-            <div className='relative p-3 bg-white rounded-md w-2/3 h-auto shadow-lg shadow-slate-400'>
+        <div className='container flex flex-col md:flex-row justify-between items-center'>
+          <div className='w-full md:w-3/5 flex justify-center items-center p-10'>
+            <div className='relative p-3 bg-white rounded-md w-full md:w-2/3 h-auto shadow-lg shadow-slate-400'>
               <Image
                 src={Photo}
                 alt='photo'
@@ -45,12 +48,9 @@ const About = () => {
             <div className='rounded-full bg-orange-400/40 px-4 py-1 self-start'>
               <p className='font-light text-sm text-orange-600'>About</p>
             </div>
-            <h2 className='font-bold text-4xl'>PT Mandiri Pratama Putra</h2>
+            <h2 className='font-bold text-4xl'>{aboutData.title}</h2>
             <p className='font-thin leading-relaxed text-lg'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              tempore reiciendis provident aspernatur expedita? Ipsa deserunt,
-              assumenda sit, aliquam similique impedit culpa fugiat asperiores
-              consectetur sequi sint cum, quia vel?
+              {aboutData.desc}
             </p>
             <div className='grid grid-cols-2 gap-4'>
               <div className='flex space-x-3 items-center '>
@@ -78,7 +78,7 @@ const About = () => {
                 <p className='font-thin text-sm'> pelayanan</p>
               </div>
             </div>
-            <button className='self-start py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-light rounded-sm relative'>
+            <button className='self-center md:self-start py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-light rounded-sm relative'>
               <div className='fixed top-0 left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full bg-black rounded-r-sm -z-10'></div>
               Produk Kami
             </button>
@@ -90,16 +90,36 @@ const About = () => {
         <div className='rounded-full bg-orange-400/40 px-4 py-1'>
           <p className='font-light text-sm text-orange-600'>Teams</p>
         </div>
-        <h2 className='font-bold text-4xl'>Our Hilarious Teams</h2>
-        <div className='w-full grid grid-cols-3 gap-10 py-10'>
-          <TeamCard />
-          <TeamCard />
-          <TeamCard />
+        <h2 className='font-bold text-4xl text-center'>Our Hilarious Teams</h2>
+        <div className='w-full grid md:grid-cols-3 gap-10 py-10'>
+          {teams.data.map((data, key) => (
+            <TeamCard
+              key={key}
+              image={`https://mpp-api.herokuapp.com${data.attributes.image.data.attributes.url}`}
+              height={data.attributes.image.data.attributes.height}
+              width={data.attributes.image.data.attributes.width}
+              nama={data.attributes.Nama}
+              position={data.attributes.position}
+            />
+          ))}
         </div>
       </div>
     </Layout>
   );
 };
+
+export async function getServerSideProps(context) {
+  const apiTeams = await ApiConfig("teams?populate=*");
+  const teams = apiTeams.data;
+  const apiAbouts = await ApiConfig("/abouts?populate=*");
+  const abouts = apiAbouts.data;
+  return {
+    props: {
+      teams,
+      abouts,
+    },
+  };
+}
 
 About.layouts = Layout;
 

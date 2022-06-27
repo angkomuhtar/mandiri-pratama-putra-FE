@@ -10,11 +10,15 @@ function Navbar({ offsetY }) {
   return (
     <header
       className={`bg-blue-300 ${
-        offsetY > 140 ? "shadow-xl py-2" : "md:bg-transparent py-10"
+        offsetY > 140 ? "shadow-xl py-4" : "md:bg-transparent py-10"
       } z-10 fixed w-full transform duration-300`}>
       <div className='container flex justify-between items-center'>
-        <div className=''>
+        <div className='flex items-end'>
           <Image src={appLogo} width={75} height={35} alt='' />
+          <h2 className='font-bold text-lg text-white leading-[19px] ml-3 hidden md:visible'>
+            Mandiri <br />
+            Pratama Putra
+          </h2>
         </div>
         <nav className=''>
           <a

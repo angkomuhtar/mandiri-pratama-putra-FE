@@ -28,7 +28,7 @@ const Index = () => {
             <p className='font-light text-sm text-orange-600'>Products</p>
           </div>
           <h2 className='font-bold text-4xl'>Our Property</h2>
-          <div className='grid grid-cols-3 gap-6 w-full'>
+          <div className='grid md:grid-cols-3 gap-6 w-full'>
             <ProductCard
               title='Bumi Findaria Mas'
               location='Patalassang, Makassar'
