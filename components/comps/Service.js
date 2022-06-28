@@ -20,6 +20,7 @@ const Service = ({ data }) => {
       </div>
       {data.map((data, key) => (
         <ServiceCard
+          key={key}
           img={`${process.env.NEXT_PUBLIC_IMG_URL}${data.attributes.img.data.attributes.url}`}
           title={data.attributes.title}
           desc={data.attributes.desc}
