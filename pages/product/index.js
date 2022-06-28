@@ -13,9 +13,10 @@ import PageHeader from "../../components/comps/PageHeader";
 import ProductCard from "../../components/comps/ProductCard";
 import TeamCard from "../../components/elements/TeamCard";
 import Layout from "../../components/Layout";
-import Photo from "../../public/property.jpg";
+import ApiCall from "../../utils/ApiConfig";
 
-const Index = () => {
+const Index = ({ product }) => {
+  console.log(product);
   return (
     <Layout>
       <PageHeader
@@ -29,33 +30,30 @@ const Index = () => {
           </div>
           <h2 className='font-bold text-4xl'>Our Property</h2>
           <div className='grid md:grid-cols-3 gap-6 w-full'>
-            <ProductCard
-              title='Bumi Findaria Mas'
-              location='Patalassang, Makassar'
-              path='/product/Bumi Findaria Mas/123'
-            />
-            <ProductCard
-              title='Bumi Findaria Mas 2'
-              location='Patalassang, Makassar'
-            />
-            <ProductCard
-              title='Bumi Findaria Mas 2'
-              location='Patalassang, Makassar'
-            />
-            <ProductCard
-              title='Bumi Findaria Mas 2'
-              location='Patalassang, Makassar'
-            />
-            <ProductCard
-              title='Bumi Findaria Mas 2'
-              location='Patalassang, Makassar'
-            />
+            {product.map((data, key) => (
+              <ProductCard
+                key={key}
+                title={data.attributes.Name}
+                location={`${data.attributes.Alamat}, ${data.attributes.city}`}
+                path='/product/Bumi Findaria Mas/123'
+              />
+            ))}
           </div>
         </div>
       </div>
     </Layout>
   );
 };
+
+export async function getServerSideProps(context) {
+  const apiProduct = await ApiCall("products?populate=*");
+  const product = apiProduct.data.data;
+  return {
+    props: {
+      product,
+    },
+  };
+}
 
 Index.layouts = Layout;
 

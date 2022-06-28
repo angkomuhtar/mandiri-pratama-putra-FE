@@ -7,6 +7,7 @@ import {
   IoPlay,
   IoRibbonOutline,
   IoSchoolOutline,
+  IoSparkles,
   IoStorefrontOutline,
 } from "react-icons/io5";
 import PageHeader from "../components/comps/PageHeader";
@@ -20,10 +21,7 @@ const About = ({ teams, abouts }) => {
   console.log(aboutData);
   return (
     <Layout>
-      <PageHeader
-        title='Tentang Kami'
-        desc='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-      />
+      <PageHeader title={aboutData.Header} desc={aboutData.HeaderDesc} />
       <div className='min-h-screen bg-[#f7f7f9] flex flex-col justify-center '>
         <div className='container flex flex-col md:flex-row justify-between items-center'>
           <div className='w-full md:w-3/5 flex justify-center items-center p-10'>
@@ -53,30 +51,14 @@ const About = ({ teams, abouts }) => {
               {aboutData.desc}
             </p>
             <div className='grid grid-cols-2 gap-4'>
-              <div className='flex space-x-3 items-center '>
-                <div className='p-3 rounded-full bg-orange-100 flex justify-center items-center text-orange-600'>
-                  <IoSchoolOutline size={24} />
+              {aboutData.services.data.map((data, key) => (
+                <div className='flex space-x-3 items-center ' key={key}>
+                  <div className='p-3 rounded-full bg-orange-100 flex justify-center items-center text-orange-600'>
+                    <IoSparkles size={24} />
+                  </div>
+                  <p className='font-thin text-sm'>{data.attributes.service}</p>
                 </div>
-                <p className='font-thin text-sm'> pelayanan</p>
-              </div>
-              <div className='flex space-x-3 items-center '>
-                <div className='p-3 rounded-full bg-orange-100 flex justify-center items-center text-orange-600'>
-                  <IoStorefrontOutline size={24} />
-                </div>
-                <p className='font-thin text-sm'> pelayanan</p>
-              </div>
-              <div className='flex space-x-3 items-center '>
-                <div className='p-3 rounded-full bg-orange-100 flex justify-center items-center text-orange-600'>
-                  <IoRibbonOutline size={24} />
-                </div>
-                <p className='font-thin text-sm'> pelayanan</p>
-              </div>
-              <div className='flex space-x-3 items-center '>
-                <div className='p-3 rounded-full bg-orange-100 flex justify-center items-center text-orange-600'>
-                  <IoRibbonOutline size={24} />
-                </div>
-                <p className='font-thin text-sm'> pelayanan</p>
-              </div>
+              ))}
             </div>
             <button className='self-center md:self-start py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-light rounded-sm relative'>
               <div className='fixed top-0 left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full bg-black rounded-r-sm -z-10'></div>
