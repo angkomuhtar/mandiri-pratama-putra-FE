@@ -176,6 +176,7 @@ const Index = () => {
                   <DescSection title='Denah Bangunan'>
                     <div className='w-full py-5'>
                       <Image
+                        alt=''
                         src={plans}
                         layout='responsive'
                         className='object-cover'

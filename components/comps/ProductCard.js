@@ -11,6 +11,7 @@ const ProductCard = ({ title, location, path }) => {
       className='w-full flex flex-col hover:scale-105 transform duration-200 cursor-pointer shadow-md shadow-gray-500/20'>
       <div className='relative aspect-[4/2]'>
         <Image
+          alt=''
           src={Photo}
           layout='fill'
           className='object-cover rounded-t-md'
