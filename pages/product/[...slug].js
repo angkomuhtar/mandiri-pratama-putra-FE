@@ -170,8 +170,10 @@ const Index = ({ product }) => {
                             {attributes.details}
                           </p>
                           <div className='grid grid-cols-3 my-4 gap-4'>
-                            {attributes.features.split(",").map((data) => (
-                              <p className='font-light text-sm flex items-center'>
+                            {attributes.features.split(",").map((data, key) => (
+                              <p
+                                key={key}
+                                className='font-light text-sm flex items-center'>
                                 <IoCheckmarkDone
                                   size={26}
                                   className='mr-4 text-orange-500'
