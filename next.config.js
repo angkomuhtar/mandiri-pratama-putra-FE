@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: ["mpp-api.herokuapp.com"],
+    domains: ["mpp-api.herokuapp.com", "source.unsplash.com"],
   },
 };

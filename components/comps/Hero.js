@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Hero = ({ data }) => {
@@ -12,15 +13,27 @@ const Hero = ({ data }) => {
           <div className='p-7 hover:border-l-2 border-l-blue-500 transform duration-75  md:max-w-lg'>
             <p className='font-light text-white'>{data.subtitle}</p>
           </div>
-          <a
-            type='button'
-            href={`https://api.whatsapp.com/send/?phone=62${data.phone}&text="Saya Tertarik Untuk Hunian di MPP Property"&type=phone_number&app_absent=0`}
-            target='_blank'
-            rel='noreferrer'
-            className='py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-semibold rounded-sm relative'>
-            <div className='fixed top-0 left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full bg-black rounded-r-sm -z-10'></div>
-            Hubungi Kami
-          </a>
+          <div className='flex space-x-3'>
+            <a
+              type='button'
+              href={`https://api.whatsapp.com/send/?phone=62${data.phone}&text="Saya Tertarik Untuk Hunian di MPP Property"&type=phone_number&app_absent=0`}
+              target='_blank'
+              rel='noreferrer'
+              className='py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-semibold rounded-sm relative'>
+              <div className='fixed top-0 left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full bg-black rounded-r-sm -z-10'></div>
+              Hubungi Kami
+            </a>
+            <Link href='/product'>
+              <a
+                type='button'
+                href='#'
+                rel='noreferrer'
+                className='py-4 px-7 group border hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-white hover:bg-orange text-white font-semibold rounded-sm relative'>
+                <div className='fixed top-0 left-0 bottom-0 w-0 transition-all duration-300 group-hover:w-full bg-orange-600 rounded-r-sm -z-10'></div>
+                Lihat Semua Properti
+              </a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

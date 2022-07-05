@@ -33,7 +33,7 @@ export default function Home({ mainFeatures, heroes }) {
   return (
     <Layout>
       <Hero data={heroes.data[0].attributes} />
-      <FindBox />
+      {/* <FindBox /> */}
       <Service data={mainFeatures.data} />
       <VideoBox />
       <Latest view={winWidth} />
@@ -43,6 +43,7 @@ export default function Home({ mainFeatures, heroes }) {
 
 export async function getServerSideProps(context) {
   const apiHero = await ApiCall("heroes");
+  console.log(apiHero);
   const heroes = apiHero.data;
   const apiMainFeature = await ApiCall("main-features?populate=*");
   const mainFeatures = apiMainFeature.data;

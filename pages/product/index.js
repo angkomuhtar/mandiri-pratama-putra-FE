@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import {
   IoCallOutline,
   IoLogoFacebook,
@@ -16,7 +16,7 @@ import Layout from "../../components/Layout";
 import ApiCall from "../../utils/ApiConfig";
 
 const Index = ({ product }) => {
-  console.log(product);
+  const [data, setData] = useState(product);
   return (
     <Layout>
       <PageHeader
@@ -30,12 +30,23 @@ const Index = ({ product }) => {
           </div>
           <h2 className='font-bold text-4xl'>Our Property</h2>
           <div className='grid md:grid-cols-3 gap-6 w-full'>
-            {product.map((data, key) => (
+            <div className='md:col-span-3 space-x-2'>
+              <button className='border border-orange-600 text-orange-600 rounded-full px-4 py-0.5 hover:text-white hover:bg-orange-600 transform duration-200'>
+                All
+              </button>
+              <button className='border border-orange-600 text-orange-600 rounded-full px-4 py-0.5 hover:text-white hover:bg-orange-600 transform duration-200'>
+                Makassar
+              </button>
+              <button className='border border-orange-600 text-orange-600 rounded-full px-4 py-0.5 hover:text-white hover:bg-orange-600 transform duration-200'>
+                Jakarta
+              </button>
+            </div>
+            {data.map((data, key) => (
               <ProductCard
                 key={key}
                 title={data.attributes.Name}
                 location={`${data.attributes.Alamat}, ${data.attributes.city}`}
-                path='/product/Bumi Findaria Mas/123'
+                path={`/product/${data.attributes.Name}/${data.id}`}
               />
             ))}
           </div>
