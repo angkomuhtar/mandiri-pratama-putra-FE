@@ -116,8 +116,10 @@ const Index = ({ product }) => {
 
               <DescSection title='Keunggulan'>
                 <div className='grid grid-cols-2 gap-4 p-6'>
-                  {product_features.data.map((product_features) => (
-                    <p className='font-light text-sm flex items-center'>
+                  {product_features.data.map((product_features, key) => (
+                    <p
+                      key={key}
+                      className='font-light text-sm flex items-center'>
                       <IoBookmarksOutline
                         size={26}
                         className='mr-4 text-orange-500'
