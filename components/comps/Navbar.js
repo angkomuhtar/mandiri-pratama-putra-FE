@@ -10,7 +10,7 @@ function Navbar({ offsetY }) {
   return (
     <header
       className={`bg-blue-300 ${
-        offsetY > 140 ? "shadow-xl py-4" : "md:bg-transparent py-10"
+        offsetY > 140 ? "shadow-xl py-4" : "md:bg-transparent py-4 md:py-10"
       } z-10 fixed w-full transform duration-300`}>
       <div className='container flex justify-between items-center'>
         <div className='flex items-end'>

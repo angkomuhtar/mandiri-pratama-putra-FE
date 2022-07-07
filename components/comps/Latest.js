@@ -8,7 +8,7 @@ import PropertyCards from "../elements/PropertyCards";
 
 import img1 from "../../public/hero.jpg";
 
-const Latest = ({ view }) => {
+const Latest = ({ view, data }) => {
   return (
     <div className='bg-stone-200 py-24'>
       <div className='basis-full flex flex-col justify-center items-center space-y-4'>
@@ -26,18 +26,21 @@ const Latest = ({ view }) => {
           navigation={true}
           loop={true}
           modules={[Navigation]}>
-          <SwiperSlide>
-            <PropertyCards img={img1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PropertyCards img={img1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PropertyCards img={img1} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PropertyCards img={img1} />
-          </SwiperSlide>
+          {data.map((data, key) => {
+            return (
+              <SwiperSlide key={key}>
+                <PropertyCards
+                  title={data.attributes.Name}
+                  location={`${data.attributes.city}, ${data.attributes.Alamat}`}
+                  room={data.attributes.types.data[0].attributes.mainroom}
+                  bath={data.attributes.types.data[0].attributes.bathroom}
+                  building={data.attributes.types.data[0].attributes.building}
+                  land={data.attributes.types.data[0].attributes.land}
+                  img={img1}
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <div className='flex justify-center py-16'>
           <button className='py-4 px-7 group hover:border-l-4 hover:translate-x-2 transition-all duration-300 border-orange-600 bg-orange-600 hover:bg-black text-white font-semibold rounded-sm relative'>

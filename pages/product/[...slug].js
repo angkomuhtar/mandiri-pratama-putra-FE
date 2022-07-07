@@ -15,6 +15,8 @@ import {
   IoBookmarksOutline,
   IoSendSharp,
   IoCheckmarkDone,
+  IoSquare,
+  IoSquareOutline,
 } from "react-icons/io5";
 import DescSection from "../../components/comps/DescSection";
 import PageHeader from "../../components/comps/PageHeader";
@@ -172,6 +174,46 @@ const Index = ({ product }) => {
                             {attributes.details}
                           </p>
                           <div className='grid grid-cols-3 my-4 gap-4'>
+                            {attributes.mainroom && (
+                              <p className='font-light text-xs flex items-center'>
+                                <IoBedOutline
+                                  size={26}
+                                  className='mr-4 text-orange-500'
+                                />
+                                {attributes.mainroom} Kamar
+                              </p>
+                            )}
+
+                            {attributes.bathroom && (
+                              <p className='font-light text-xs flex items-center'>
+                                <BiBath
+                                  size={26}
+                                  className='mr-4 text-orange-500'
+                                />
+                                {attributes.bathroom} Kamar Mandi
+                              </p>
+                            )}
+
+                            {attributes.building && (
+                              <p className='font-light text-xs flex items-center'>
+                                <IoHomeOutline
+                                  size={26}
+                                  className='mr-4 text-orange-500'
+                                />
+                                {attributes.building} m2 LB
+                              </p>
+                            )}
+
+                            {attributes.land && (
+                              <p className='font-light text-xs flex items-center'>
+                                <IoSquareOutline
+                                  size={26}
+                                  className='mr-4 text-orange-500'
+                                />
+                                {attributes.land} m2 LT
+                              </p>
+                            )}
+
                             {attributes.features.split(",").map((data, key) => (
                               <p
                                 key={key}
